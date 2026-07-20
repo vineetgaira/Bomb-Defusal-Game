@@ -7,16 +7,16 @@ from src.ascii_art import BOMB_STATES, welcome_banner, rule_screen
 
 
 def rule_book():
-    print(Fore.CYAN+rule_screen)
+    print(Fore.LIGHTCYAN_EX+rule_screen)
 
 def menu():
-    print(Fore.CYAN+welcome_banner)
+    print(Fore.LIGHTCYAN_EX+welcome_banner)
 
 def active_bomb():
     print(Fore.LIGHTYELLOW_EX+BOMB_STATES["active"])
 
 def bomb_blast():
-    print(Fore.RED+BOMB_STATES["blast"])
+    print(Fore.RED+Style.BRIGHT+BOMB_STATES["blast"]+Style.RESET_ALL)
 
 def defused_bomb():
     print(Fore.GREEN+BOMB_STATES["defused"])

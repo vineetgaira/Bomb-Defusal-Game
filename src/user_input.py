@@ -1,11 +1,15 @@
-def main_menu_choice():
-    valid_choices={1,2,3,4,5}
+import colorama
+from colorama import Fore
+colorama.init(autoreset=True)
+
+def get_player_choice():
+    valid_choices={1,2,3,4,5,6}
     while True:
-        choice=int(input("Enter your choie: "))
         try:
+            choice=int(input(Fore.LIGHTBLUE_EX+"Enter your choie: "))
             if choice in valid_choices:
                 return choice
             else:
-                print("Invalid choice. TRY AGAIN!")
-        except valid_choices:
-            print("Please enter a valid choice from the menu.")
+                print(Fore.RED+"Invalid choice. TRY AGAIN!")
+        except ValueError:
+            print(Fore.RED+"Invalid choice. ENTER A NUMBER!")

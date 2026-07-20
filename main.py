@@ -1,11 +1,8 @@
-from src.display import rule_book, menu, active_bomb, bomb_blast, defused_bomb
+from src.user_input import get_player_choice
 
 def main():
-    rule_book()
-    menu()
-    active_bomb()
-    bomb_blast()
-    defused_bomb()
+    get_player_choice()
+   
 
 if __name__ == "__main__":
     main()
