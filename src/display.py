@@ -4,8 +4,6 @@ colorama.init(autoreset=True)
 
 from src.ascii_art import BOMB_STATES, welcome_banner, rule_screen
 
-
-
 def rule_book():
     print(Fore.LIGHTCYAN_EX+rule_screen)
 
@@ -20,3 +18,6 @@ def bomb_blast():
 
 def defused_bomb():
     print(Fore.GREEN+BOMB_STATES["defused"])
+
+def goodbye():
+    print(Fore.CYAN+"Thanks for being here...")

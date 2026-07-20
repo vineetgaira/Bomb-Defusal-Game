@@ -1,8 +1,7 @@
-from src.user_input import get_player_choice
+from src.game import start_game
 
 def main():
-    get_player_choice()
-   
+    start_game()
 
 if __name__ == "__main__":
     main()
