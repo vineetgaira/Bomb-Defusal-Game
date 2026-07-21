@@ -1,6 +1,7 @@
 """These are all the puzzles that will be shown 
 after the plyer enters option 3 'inspect bomb'."""
 import random
+import math
 
 def sum_puzzle():
     a=random.randint(500, 4999)
@@ -29,7 +30,19 @@ def reversed_number():
     return clue_text, int(code[::-1])
 
 def mul_div():
-    pass
+
+    A = random.randint(1,999)
+
+    min_B=math.ceil(1000/A)
+    max_B=math.floor(1000/A)
+
+    B=random.choice(min_B,max_B)
+
+    code=A*B
+    clue_text=f" || {A} X {B} ||"
+
+    return clue_text, code 
+
 
 def date_time():
     pass
