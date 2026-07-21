@@ -34,7 +34,7 @@ def mul_puzzle():
     A = random.randint(1,999)
 
     min_B=math.ceil(1000/A)
-    max_B=math.floor(1000/A)
+    max_B=math.floor(9999/A)
 
     B=random.choice([min_B,max_B])
 
