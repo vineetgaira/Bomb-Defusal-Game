@@ -69,7 +69,6 @@ def word_to_number():
     clue_text=("If A = 0, B = 1 and C = 3....up to J = 9.\n"
                f"Then the code is: {letters}")
 
-
     return clue_text, code
 
 def missing_digit():
