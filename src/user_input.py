@@ -16,8 +16,11 @@ def get_player_choice():
 
 def enter_code():
     while True:
-        code=input("Enter the code: ")
-        if len(code)==4:
-            return int(code)
-        else:
-            print("Please enter a valid length or number!")
+        try:
+            code=input("Enter the code: ")
+            if len(code)==4:
+                return int(code)
+            else:
+                print("Please enter a valid length or number!")
+        except ValueError:
+            print("Please enter a number.")

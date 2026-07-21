@@ -29,7 +29,7 @@ def reversed_number():
     clue_text=f"Hint: {number} || What if everything was just reversed in the world?"
     return clue_text, int(code[::-1])
 
-def mul_div():
+def mul_puzzle():
 
     A = random.randint(1,999)
 
@@ -48,13 +48,42 @@ def date_time():
     pass
 
 def word_to_number():
-    pass
+
+    alpha_num_map={
+        0: "A",
+        1: "B",
+        2: "C",
+        3: "D",
+        4: "E",
+        5: "F",
+        6: "G",
+        7: "H",
+        8: "I",
+        9: "J"
+    }
+
+    code=[random.randint(0, 9) for _ in range(4)]
+
+    clue_text=f"If A = 0, B = 1, C = 2 and it goes on to J = 9."
+
+    print(clue_text,"\nThen the code is : ",end="")
+    for i, num in enumerate(code):
+        print(alpha_num_map[code[i]],end="")
+
+    return code 
 
 def missing_digit():
     pass
 
 def binary():
-    pass
+
+    code = random.randint(1000, 9999)
+
+    binary_string = bin(code) [2:]
+
+    clue_text=f"This is another form of code :{binary_string}"
+
+    return clue_text, code
 
 def riddle_puzzle():
     pass
