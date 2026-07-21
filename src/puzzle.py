@@ -39,7 +39,7 @@ def mul_puzzle():
     B=random.choice([min_B,max_B])
 
     code=A*B
-    clue_text=f" || {A} X {B} ||"
+    clue_text=f"Hint: || {A} X {B} ||"
 
     return clue_text, str(code) 
 
@@ -61,15 +61,16 @@ def word_to_number():
         9: "J"
     }
 
-    code=[random.randint(0, 9) for _ in range(4)]
+    digits=[random.randint(0, 9) for _ in range(4)]
+    
+    letters="".join(alpha_num_map[d] for d in digits) 
+    code="".join(str(d) for d in digits)
 
-    clue_text=f"If A = 0, B = 1, C = 2 and it goes on to J = 9."
+    clue_text=("If A = 0, B = 1 and C = 3....up to J = 9.\n"
+               f"Then the code is: {letters}")
 
-    print(clue_text,"\nThen the code is : ",end="")
-    for i, num in enumerate(code):
-        print(alpha_num_map[code[i]],end="")
 
-    return code 
+    return clue_text, code
 
 def missing_digit():
     pass
@@ -82,7 +83,7 @@ def binary():
 
     clue_text=f"This is another form of code :{binary_string}"
 
-    return clue_text, code
+    return clue_text, str(code)
 
 def riddle_puzzle():
     pass
