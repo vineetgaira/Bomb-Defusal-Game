@@ -10,15 +10,23 @@ def sum_puzzle():
     return clue_text, code
 
 def digit_pattern():
-    code=[]
-    for i in range(0,8):
-        i+=2
-        if len(code)<=4:
-            code.append(i)
-    return int("".join(map(str, code)))
+
+    digits=[random.randit(0,7) for _ in range(4)]
+
+    orig=int("".join(map(str,digits)))
+
+    code=int("".join(str((digits * 3) % 7) for d in digits))
+
+    clue_text=f"Hint: Multiply {orig} by 2nd odd number than divide by 4th odd number.\nWhat 'remains' is the code."
+
+    return clue_text, code
 
 def reversed_number():
-    pass
+
+    number=random.randint(1000,9999)
+    code=str(number)
+    clue_text=f"Hint: {number} || What if everything was just reversed in the world?"
+    return clue_text, int(code[::-1])
 
 def mul_div():
     pass
