@@ -43,9 +43,6 @@ def mul_puzzle():
 
     return clue_text, str(code) 
 
-def date_time():
-    pass
-
 def word_to_number():
 
     alpha_num_map={
@@ -71,8 +68,6 @@ def word_to_number():
 
     return clue_text, code
 
-def missing_digit():
-    pass
 
 def binary():
 
@@ -84,8 +79,3 @@ def binary():
 
     return clue_text, str(code)
 
-def riddle_puzzle():
-    pass
-
-def sequence_puzzle():
-    pass
