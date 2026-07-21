@@ -13,3 +13,11 @@ def get_player_choice():
                 print(Fore.RED+"Invalid choice. TRY AGAIN!")
         except ValueError:
             print(Fore.RED+"Invalid choice. ENTER A NUMBER!")
+
+def enter_code():
+    while True:
+        code=input("Enter the code: ")
+        if len(code)==4:
+            return int(code)
+        else:
+            print("Please enter a valid length or number!")
