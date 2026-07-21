@@ -12,13 +12,13 @@ def sum_puzzle():
 
 def digit_pattern():
 
-    digits=[random.randit(0,7) for _ in range(4)]
+    digits=[random.randint(0,7) for _ in range(4)]
 
     orig=int("".join(map(str,digits)))
 
-    code="".join(str((digits * 3) % 7) for d in digits)
+    code="".join(str((d * 3) % 7) for d in digits)
 
-    clue_text=f"Hint: Multiply {digits} by 2nd odd number than divide by 4th odd number.\nWhat 'remains' is the code."
+    clue_text=f"Hint: Multiply each digit of {orig} by 2nd odd number than divide by 4th odd number.\nWhat 'remains' is the code."
 
     return clue_text, code
 
@@ -36,7 +36,7 @@ def mul_puzzle():
     min_B=math.ceil(1000/A)
     max_B=math.floor(1000/A)
 
-    B=random.choice(min_B,max_B)
+    B=random.choice([min_B,max_B])
 
     code=A*B
     clue_text=f" || {A} X {B} ||"
