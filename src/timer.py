@@ -1,10 +1,9 @@
 import time
 from colorama import Fore, Style
-TOTAL_SECONDS = 60
 
-def timer():
+def show_timer(time_remaining):
 
-    for remaining in range(TOTAL_SECONDS, -1, -1):
+    for remaining in range(time_remaining , -1, -1):
 
         mins, secs = divmod(remaining, 60)
 
