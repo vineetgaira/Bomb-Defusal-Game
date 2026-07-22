@@ -79,7 +79,6 @@ def binary():
 
     return clue_text, str(code)
 
-puzlles = [sum_puzzle(), digit_pattern(), reversed_number(), mul_puzzle(), word_to_number(), binary()]
 
 def random_puzzle(puzzles):
     

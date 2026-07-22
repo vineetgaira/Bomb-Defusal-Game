@@ -1,14 +1,19 @@
+import colorama
+from colorama import Fore, Style
+colorama.init(autoreset=True)
 import time
 import random
 from src.display import rule_book, menu, active_bomb, defused_bomb, bomb_blast,goodbye
 from src.user_input import get_player_choice, enter_code
-from src.utils import clear_screen, sum_puzzle, digit_p
-from src.puzzle import random_puzzle()
+from src.utils import clear_screen, wait_for_input_to_continue
+from src.puzzle import random_puzzle, sum_puzzle, digit_pattern, reversed_number, mul_puzzle, word_to_number, binary
 from src.timer import show_timer
 
 def start_game():
+    puzzles = [sum_puzzle(), digit_pattern(), reversed_number(), mul_puzzle(), word_to_number(), binary()]
     correct_wire = random.choice(["RED", "BLUE"])
     saved_code = None
+    clue_text = None
     time_remaining = 300
     inspect_time_cost = 60
     game_over = False
@@ -41,11 +46,9 @@ def start_game():
         if choice == 3:
             clear_screen()
             active_bomb()
-            if saved_code is None:
-                clue_text, saved_code = random_puzzle()
-            else:
-                clue_text = get_same_clue_again()
-            show_hint(clue_text)
+            if saved_code is None and clue_text is None:
+                clue_text, saved_code = random_puzzle(puzzles)
+            print(Fore.GREEN+clue_text)
 
             time_remaining -= inspect_time_cost
 
@@ -53,7 +56,7 @@ def start_game():
 
         if choice == 4:
             if saved_code is None:
-                 print("You haven't inspected the bomb yet.")
+                 print(Fore.RED+Style.BRIGHT+"You haven't inspected the bomb yet."+Style.RESET_ALL)
             else:
                 guess = enter_code()
 
