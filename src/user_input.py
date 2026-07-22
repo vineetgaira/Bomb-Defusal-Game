@@ -1,5 +1,5 @@
 import colorama
-from colorama import Fore
+from colorama import Fore, Style
 colorama.init(autoreset=True)
 
 def get_player_choice():
@@ -16,9 +16,9 @@ def get_player_choice():
 
 def enter_code():
     while True:
-        code=input("Enter the code: ")
+        code=input(Fore.LIGHTBLUE_EX+"Enter the code: ")
         if len(code)==4 and code.isdigit():
             return code
         else:
-            print("Please enter a valid length or number!")
+            print(Fore.RED+Style.BRIGHT+"Please enter a valid length or number!"+Style.RESET_ALL)
    

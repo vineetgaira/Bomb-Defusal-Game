@@ -7,28 +7,29 @@ from src.display import rule_book, menu, active_bomb, defused_bomb, bomb_blast,g
 from src.user_input import get_player_choice, enter_code
 from src.utils import clear_screen, wait_for_input_to_continue
 from src.puzzle import random_puzzle, sum_puzzle, digit_pattern, reversed_number, mul_puzzle, word_to_number, binary
-from src.timer import show_timer
+# from src.timer import show_timer
 
 def start_game():
-    puzzles = [sum_puzzle, digit_pattern, reversed_number, mul_puzzle, word_to_number, binary]
+    puzzles = [sum_puzzle(), digit_pattern(), reversed_number(), mul_puzzle(), word_to_number(), binary()]
     correct_wire = random.choice(["RED", "BLUE"])
     saved_code = None
     clue_text = None
-    time_remaining = 300
-    inspect_time_cost = 60
+    chances= 3
+    inspection_cost = 1
     game_over = False
 
+    menu()
+    wait_for_input_to_continue()
+    clear_screen()
     while not game_over:
 
-        if time_remaining <= 0:
+        if chances<= 0:
             bomb_blast()
             game_over = True 
             break
 
-        clear_screen()
-        menu()
         active_bomb()
-        show_timer(time_remaining)
+        print(Fore.BLUE+f"Chances : {Fore.RED+str(chances)}")
         choice=get_player_choice()
 
         if choice == 1:
@@ -41,7 +42,10 @@ def start_game():
         if choice == 2:
             if correct_wire == "BLUE":
                 defused_bomb()
+            else:
+                bomb_blast()
             game_over = True
+            
         
         if choice == 3:
             clear_screen()
@@ -50,7 +54,7 @@ def start_game():
                 clue_text, saved_code = random_puzzle(puzzles)
             print(Fore.GREEN+clue_text)
 
-            time_remaining -= inspect_time_cost
+            chances-= inspection_cost
 
             wait_for_input_to_continue()
 
@@ -75,4 +79,3 @@ def start_game():
         if choice == 6:
             goodbye()
             game_over = True
-

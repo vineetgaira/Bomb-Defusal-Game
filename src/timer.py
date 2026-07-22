@@ -1,7 +1,7 @@
 import time
 from colorama import Fore, Style
 
-def show_timer(time_remaining):
+"""def show_timer(time_remaining):
 
     for remaining in range(time_remaining , -1, -1):
 
@@ -12,6 +12,5 @@ def show_timer(time_remaining):
         time.sleep(1)
     
     print(Fore.RED+Style.BRIGHT+"BLAST! BLAST! BLAST!"+Style.RESET_ALL)
+"""
 
-
-        
