@@ -3,6 +3,7 @@ from colorama import Fore, Style
 colorama.init(autoreset=True)
 
 from src.ascii_art import BOMB_STATES, welcome_banner, rule_screen
+from src.timer import timer
 
 def rule_book():
     print(Fore.LIGHTCYAN_EX+rule_screen)
@@ -21,3 +22,8 @@ def defused_bomb():
 
 def goodbye():
     print(Fore.CYAN+"Thanks for being here...")
+
+def show_timer(timer_format):
+
+    print(Fore.RED+Style.BRIGHT+f"\rTime Remaining: {timer_format}", end=""+Style.RESET_ALL)
+    
