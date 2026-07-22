@@ -8,7 +8,7 @@ def show_timer(time_remaining):
         mins, secs = divmod(remaining, 60)
 
         timer_format=f"{mins:02d}:{secs:02d}"
-        print(Fore.RED+ Style.BRIGHT+f"\r Remaining time : || ⚠️ {timer_format} ⚠️ ||"+Style.RESET_ALL, end="")
+        print(Fore.RED+ Style.BRIGHT+f"\r Remaining time : {timer_format} ⚠️  "+Style.RESET_ALL, end="")
         time.sleep(1)
     
     print(Fore.RED+Style.BRIGHT+"BLAST! BLAST! BLAST!"+Style.RESET_ALL)
