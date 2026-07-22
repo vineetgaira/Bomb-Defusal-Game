@@ -2,14 +2,15 @@ import time
 import random
 from src.display import rule_book, menu, active_bomb, defused_bomb, bomb_blast,goodbye
 from src.user_input import get_player_choice, enter_code
-from src.utils import clear_screen
-from src.puzzle import sum_puzzle, digit_pattern, reversed_number, mul_puzzle, word_to_number, binary
+from src.utils import clear_screen, sum_puzzle, digit_p
+from src.puzzle import random_puzzle()
 from src.timer import show_timer
 
 def start_game():
     correct_wire = random.choice(["RED", "BLUE"])
     saved_code = None
     time_remaining = 300
+    inspect_time_cost = 60
     game_over = False
 
     while not game_over:
@@ -45,6 +46,7 @@ def start_game():
             else:
                 clue_text = get_same_clue_again()
             show_hint(clue_text)
+
             time_remaining -= inspect_time_cost
 
             wait_for_input_to_continue()
