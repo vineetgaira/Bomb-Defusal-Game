@@ -84,6 +84,6 @@ def random_puzzle(puzzles):
     
     puzzle = random.choice(puzzles)
 
-    return puzzle
+    return puzzle()
 
     

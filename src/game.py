@@ -10,7 +10,7 @@ from src.puzzle import random_puzzle, sum_puzzle, digit_pattern, reversed_number
 from src.timer import show_timer
 
 def start_game():
-    puzzles = [sum_puzzle(), digit_pattern(), reversed_number(), mul_puzzle(), word_to_number(), binary()]
+    puzzles = [sum_puzzle, digit_pattern, reversed_number, mul_puzzle, word_to_number, binary]
     correct_wire = random.choice(["RED", "BLUE"])
     saved_code = None
     clue_text = None
