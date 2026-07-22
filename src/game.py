@@ -9,16 +9,15 @@ def start_game():
 
     while True:
         menu()
-        input("Press enter to continue: ")
+        time.sleep(5)
         clear_screen()
         active_bomb()
         choice=get_player_choice()
-        input("Press enter to continue: ")
         clear_screen()
         if choice==1 or choice==2:
             choose_action=random.choice([defused_bomb,bomb_blast])
             choose_action()
-            input("Press enter to continue: ")
+            time.sleep(5)
             clear_screen()
         elif choice==5:
             rule_book()

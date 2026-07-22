@@ -150,7 +150,7 @@ welcome_banner=r"""
               |     [6]  Abort mission / Exit                  |
               |                                                |
               +------------------------------------------------+
-                   >> Enter your choice (1-6) and press ENTER:
+                   >> Wait 5 Sec to move to the defusal mission
 """
 
 rule_screen=r"""
