@@ -9,7 +9,7 @@ def start_game():
 
     while True:
         menu()
-        time.sleep(5)
+        input()
         clear_screen()
         active_bomb()
         choice=get_player_choice()
@@ -17,7 +17,7 @@ def start_game():
         if choice==1 or choice==2:
             choose_action=random.choice([defused_bomb,bomb_blast])
             choose_action()
-            time.sleep(5)
+            input()
             clear_screen()
         elif choice==5:
             rule_book()
