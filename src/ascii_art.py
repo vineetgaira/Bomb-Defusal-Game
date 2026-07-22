@@ -37,7 +37,7 @@ bomb_active = r"""
                               DETONATOR PACK
 
            ┌─────────────────────────────────────────────┐
-           │  ⚠  WARNING: DO NOT CUT ANY WRONG WIRE  ⚠   │
+           │  ⚠  WARNING: DO NOT CUT ANY WRONG WIRE  ⚠  │
            └─────────────────────────────────────────────┘
 """
 

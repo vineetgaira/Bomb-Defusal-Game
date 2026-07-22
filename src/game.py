@@ -3,7 +3,7 @@ import random
 from src.display import rule_book, menu, active_bomb, defused_bomb, bomb_blast,goodbye
 from src.user_input import get_player_choice
 from src.utils import clear_screen
-from puzzle import sum_puzzle, digit_pattern, reversed_number, mul_puzzle, word_to_number, binary
+from src.puzzle import sum_puzzle, digit_pattern, reversed_number, mul_puzzle, word_to_number, binary
 
 def start_game():
 
