@@ -15,7 +15,7 @@ def start_game():
     saved_code = None
     clue_text = None
     chances= 3
-    inspection_cost = 1
+    inspection_cost = 2
     game_over = False
 
     menu()
