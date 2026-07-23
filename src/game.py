@@ -33,6 +33,8 @@ def start_game():
         choice=get_player_choice()
 
         if choice == 1:
+            clear_screen()
+            time.sleep(1)
             if correct_wire == "RED":
                 defused_bomb()
             else:
@@ -40,6 +42,8 @@ def start_game():
             game_over = True
         
         if choice == 2:
+            clear_screen()
+            time.sleep(1)
             if correct_wire == "BLUE":
                 defused_bomb()
             else:
